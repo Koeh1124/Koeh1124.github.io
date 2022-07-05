@@ -1,6 +1,8 @@
 //https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
+//used to make sure images load correctly
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 var display = document.getElementsByTagName("main")[0];
+
 const aboutPage = `
 <div style="display:flex; overflow-y: hidden; height:fit-content">
     <div style="width:50%; float:left; height:auto; position:relitive; box-sizing: border-box;" class="handsomeBoy"><!--ascii art of me--></div>
@@ -15,8 +17,35 @@ const aboutPage = `
     </div>
 </div>
 `;
+
 const portfolio = `
+<div>
+    <p>Here's a list of projects I've dove</p>
+    <p>Type them in to see them :)</p>
+    <ul>
+        <li><p>sudoku</p></li>
+        <li><p>img2Ascii</p></li>
+    </ul>
+</div>
 `;
+
+const sudoku = `
+<p>One of the projects I'm most proud of is my sudoku brute forcing algorithm.</p>
+<p>Without the visulization it takes only around 20ms to solve a puzzle!</p>
+<p>Here's a link to the version with the visual <a target="_blank" href="https://replit.com/@KeenanKoehler/sudoku-checker#main.py">Click here to see!</a></p>
+`
+
+//https://web.dev/read-files/
+const ascii =`
+<div>
+    <p>Select a file from your local system and it will display it in ascii characters</p>
+    <input type="file" class="file-selector" accept="image/*">
+    <img src="#" class="ogImg" style="overflow: hidden; width: 0; height: 0;">
+    <div class="asciiDisplay">
+    </div>
+</div>
+`
+
 //https://stackoverflow.com/questions/25983603/how-to-submit-an-html-form-without-redirection#comment40688159_25983603
 //https://formsubmit.co/?utm_source=formsubmit.co&utm_medium=site%20link&utm_campaign=submission%20page
 const contactFourm = `
@@ -39,12 +68,20 @@ const contactFourm = `
     </form>
 </div>
 `;
+
 const helpPage = `
-<p>about-learn a little about me!</p>
-<p>contact-reachout to me through a fourm</p>
-<p>portfolio-look at what I've done :)</p>
-<p>clear-claers all text</p>
+<p>about -learn a little about me!</p>
+<p>contact -reachout to me through a form</p>
+<p>portfolio -look at what I've done :)</p>
+<p>clear -claers all text</p>
 `;
+
+const startPage = `
+<h1 style='text-align: center;'>Hello there!</h1>
+<p style='text-align: center;'>My name is Keenan, you can type help to see some commands you can use</p>
+<p style='text-align: center;'>There are many secrets hidden throught this page, stay a while and find them all :)</p>
+`
+
 function clearPage() {
     display.innerHTML = ""
 }
@@ -96,10 +133,17 @@ var correctInputs = {
     "about" : printImage,
     "contact" : 1,
     "drip" : printImage,
-    "clear" : clearPage
+    "clear" : clearPage,
+    "portfolio" : 1,
+    "sudoku" : 1,
+    "img2Ascii" : 1
 }
 
-display.innerHTML+=helpPage;
+document.getElementById("contact").addEventListener('click', (event) =>{
+    display.innerHTML+=contactFourm;
+})
+
+display.innerHTML+=startPage;
 input.addEventListener("keypress", function(key) {
     if(key.key === "Enter") {
         data = input.value;
@@ -107,13 +151,29 @@ input.addEventListener("keypress", function(key) {
             console.log("working")
             if (data === 'about'){
                 display.innerHTML += aboutPage;
-                printImage('handsomeBoy.jpg',0,document.getElementsByClassName('handsomeBoy')[document.getElementsByClassName('handsomeBoy').length-1])
+                printImage('assets/handsomeBoy.jpg',0,document.getElementsByClassName('handsomeBoy')[document.getElementsByClassName('handsomeBoy').length-1])
             }
             else if(data === "help"){
                 display.innerHTML+=helpPage;
             }
             else if(data === "contact"){
                 display.innerHTML+=contactFourm;
+            }
+            else if(data === "portfolio"){
+                display.innerHTML+=portfolio;
+            }
+            else if(data === "sudoku"){
+                display.innerHTML+=sudoku;
+            }
+            else if(data === "img2Ascii"){
+                display.innerHTML+= ascii;
+                //https://www.codegrepper.com/code-examples/html/input+type%3D%22file%22+and+display+image
+                const userfile = document.getElementsByClassName("file-selector")[document.getElementsByClassName("file-selector").length-1];
+                userfile.addEventListener('change', (event) => {
+                    image = document.getElementsByClassName("ogImg")[document.getElementsByClassName("ogImg").length-1]
+                    image.src = URL.createObjectURL(event.target.files[0]);
+                    printImage(image.src,0,document.getElementsByClassName('asciiDisplay')[document.getElementsByClassName('asciiDisplay').length-1])
+                  });
             }
             else{
                 correctInputs[data]();

@@ -5,6 +5,24 @@
     --importanColor: #E88873;
     --highlightColor: #A37774;
 }
+
+main div{
+    margin-bottom: 20px;
+}
+
+aside{
+    margin-left: 50%;
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    width: 100%;
+}
+
+aside button{
+    box-sizing: border-box;
+    margin-right: 15px;
+    width: 10vw;
+}
 html body{
     align-items: center;
     margin:0%;
@@ -14,6 +32,8 @@ html body{
 }
 
 header{
+    width: 100%;
+    box-sizing: border-box;
     height: 5vh;
     padding-left: 10vw;
     padding-right: 10vw;
@@ -24,6 +44,9 @@ header{
 header h1{
     text-align: center;
     font-size: 1.5em;
+}
+a{
+    color: var(--importanColor);
 }
 header aside{
     float: right;
@@ -50,6 +73,9 @@ main::-webkit-scrollbar{
     display: none;
 }
 
+ul{
+    color: var(--textColor);
+}
 section{
     border-radius: 0px 0px 15px 15px;
     height: 5vh;
