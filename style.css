@@ -1,0 +1,145 @@
+:root{
+    --mainColor: #5C6D70;
+    --concoleColor: #484A47;
+    --textColor: #E0AC9D;
+    --importanColor: #E88873;
+    --highlightColor: #A37774;
+}
+html body{
+    align-items: center;
+    margin:0%;
+    background-color: var(--mainColor);
+    overflow-y: hidden;
+    font-size: 62.5%;
+}
+
+header{
+    height: 5vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    color: var(--importanColor);
+}
+
+header h1{
+    text-align: center;
+    font-size: 1.5em;
+}
+header aside{
+    float: right;
+}
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_scrollbar_keep_func*/
+
+main{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    float: inline-start;
+    background-color: var(--concoleColor);
+    border-radius: 15px 15px 0px 0px;
+    width: 80vw;
+    height: 75vh;
+    overflow-y: scroll;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    padding: 15px;
+    padding-bottom: 0px;
+    border: 2px solid black;
+}
+
+main::-webkit-scrollbar{
+    display: none;
+}
+
+section{
+    border-radius: 0px 0px 15px 15px;
+    height: 5vh;
+    width: 80vw;
+    background-color: var(--concoleColor);
+    margin: 10vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    border-top: none;
+    align-items: center;
+}
+
+button{
+    color: var(--textColor);
+    border-color: var(--textColor);
+}
+
+button:hover{
+    color: var(--highlightColor);
+    border-color: var(--highlightColor);
+}
+p{
+    color: var(--textColor);
+    font-family: 'Inconsolata', monospace;
+    margin:0px;
+    font-size: 2em;
+    text-align: center;
+}
+
+main p {
+    text-align: left;
+}
+
+h1{
+    color: var(--textColor);
+    font-family: 'Inconsolata', monospace;
+    margin:0px;
+    font-size: 2em;
+    text-align: center;
+}
+
+aside{
+    width: 15%;
+    display: flex;
+    float: right;
+    align-content: center;
+    justify-content: space-around;
+    padding-right: 10vw;
+    margin-top: 2vh;
+}
+
+aside a{
+    color: var(--importanColor);
+}
+
+aside a:hover{
+    transition-duration: 0.2s;
+    color: var(--highlightColor);
+}
+#important{
+    color:var(--importanColor);
+}
+
+.ascii{
+    font-size: 1px;
+    font-family:
+    monospace, monospace;
+}
+input{
+    background-color: var(--concoleColor);
+    color: var(--textColor);
+    font-size: 2em;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--textColor);
+}
+
+/*https://www.w3docs.com/snippets/css/how-to-remove-and-style-the-border-outline-around-text-input-boxes-in-google-chrome.html*/
+input:focus{
+    outline: none;
+}
+
+.handsomeBoy{
+    width:50%;
+    float:left;
+    height:auto;
+    box-sizing: border-box;
+}
