@@ -72,7 +72,7 @@ async function imageAsciiPrep(url,width,div){
     var canvas = document.getElementById("asciiData");
     var ctx = canvas.getContext("2d");
     var img = new Image();
-    img.src = `assets/${url}`;
+    img.src = `${url}`;
     await sleep(15);
     var scale = Math.round((((width/img.width))/1.2)*10)/10;
     console.log(`Console Width:${width} img(wxh):${img.width}, ${img.height}`);
