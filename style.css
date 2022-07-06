@@ -1,13 +1,13 @@
 :root{
     --mainColor: #5C6D70;
-    --concoleColor: #484A47;
+    --consoleColor: #484A47;
     --textColor: #E0AC9D;
     --importanColor: #E88873;
     --highlightColor: #A37774;
 }
 
 main div{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 aside{
@@ -43,7 +43,7 @@ header{
 
 header h1{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 a{
     color: var(--importanColor);
@@ -57,11 +57,11 @@ main{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     float: inline-start;
-    background-color: var(--concoleColor);
+    background-color: var(--consoleColor);
     border-radius: 15px 15px 0px 0px;
     width: 80vw;
     height: 75vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-right: 10vw;
     margin-left: 10vw;
     padding: 15px;
@@ -80,7 +80,7 @@ section{
     border-radius: 0px 0px 15px 15px;
     height: 5vh;
     width: 80vw;
-    background-color: var(--concoleColor);
+    background-color: var(--consoleColor);
     margin: 10vw;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -150,7 +150,7 @@ aside a:hover{
     monospace, monospace;
 }
 input{
-    background-color: var(--concoleColor);
+    background-color: var(--consoleColor);
     color: var(--textColor);
     font-size: 2em;
     width: 100%;
