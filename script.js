@@ -255,14 +255,18 @@ input.addEventListener("keypress", function(key) {
     }
 })
 document.getElementById("aboutBtn").addEventListener('click', (event)=>{
-    checkData("about")
+    checkData("about");
+    event.preventDefault();
 })
 document.getElementById("contactBtn").addEventListener('click', (event)=>{
     checkData("contact")
+    event.preventDefault();
 })
 document.getElementById("portfolioBtn").addEventListener('click', (event)=>{
     checkData("portfolio")
+    event.preventDefault();
 })
 document.getElementById("clearBtn").addEventListener('click', (event)=>{
     checkData("clear")
+    event.preventDefault();
 })
