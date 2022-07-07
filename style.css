@@ -93,8 +93,9 @@ main{
     background-color: var(--consoleColor);
     border-radius: 15px 15px 0px 0px;
     width: 80vw;
-    height: 75vh;
+    min-height: 75vh;
     overflow-y: auto;
+    margin-top: 10px;
     margin-right: 10vw;
     margin-left: 10vw;
     padding: 15px;

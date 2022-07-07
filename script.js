@@ -119,8 +119,8 @@ const contactFourm = `
 
 const helpPage = `
 <p>'about' - learn a little about me!</p>
-<p>'contact' - reachout to me through a form</p>
 <p>'portfolio' - look at what I've done :)</p>
+<p>'contact' - reachout to me through a form</p>
 <p>'clear' - clears all text</p>
 `;
 
