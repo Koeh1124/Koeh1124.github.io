@@ -205,51 +205,67 @@ document.getElementById("contact").addEventListener('click', (event) =>{
     display.innerHTML+=contactFourm;
 })
 
+function checkData(data){
+    if (correctInputs[data]){
+        console.log("working")
+        if (data === 'about'){
+            display.innerHTML += aboutPage;
+            printImage('assets/handsomeBoy.jpg',0,document.getElementsByClassName('handsomeBoy')[document.getElementsByClassName('handsomeBoy').length-1])
+        }
+        else if(data === "help"){
+            display.innerHTML+=helpPage;
+        }
+        else if(data === "contact"){
+            display.innerHTML+=contactFourm;
+        }
+        else if(data === "portfolio"){
+            display.innerHTML+=portfolio;
+        }
+        else if(data === "sudoku"){
+            display.innerHTML+=sudoku;
+        }
+        else if(data === "img2Ascii"){
+            display.innerHTML+= ascii;
+            //https://www.codegrepper.com/code-examples/html/input+type%3D%22file%22+and+display+image
+            const userfile = document.getElementsByClassName("file-selector")[document.getElementsByClassName("file-selector").length-1];
+            userfile.addEventListener('change', (event) => {
+                image = document.getElementsByClassName("ogImg")[document.getElementsByClassName("ogImg").length-1]
+                image.src = URL.createObjectURL(event.target.files[0]);
+                printImage(image.src,0,document.getElementsByClassName('asciiDisplay')[document.getElementsByClassName('asciiDisplay').length-1])
+              });
+        }
+        else if(data === "adventure"){
+            display.innerHTML+=adventure;
+        }
+        else if(data === "fortuneTeller"){
+            display.innerHTML+=fortune;
+        }
+        else if(data === "resume"){
+            display.innerHTML+= resume;
+        }
+        else{
+            correctInputs[data]();
+        }
+    }
+}
+
 display.innerHTML+=startPage;
 input.addEventListener("keypress", function(key) {
     if(key.key === "Enter") {
         data = input.value;
-        if (correctInputs[data]){
-            console.log("working")
-            if (data === 'about'){
-                display.innerHTML += aboutPage;
-                printImage('assets/handsomeBoy.jpg',0,document.getElementsByClassName('handsomeBoy')[document.getElementsByClassName('handsomeBoy').length-1])
-            }
-            else if(data === "help"){
-                display.innerHTML+=helpPage;
-            }
-            else if(data === "contact"){
-                display.innerHTML+=contactFourm;
-            }
-            else if(data === "portfolio"){
-                display.innerHTML+=portfolio;
-            }
-            else if(data === "sudoku"){
-                display.innerHTML+=sudoku;
-            }
-            else if(data === "img2Ascii"){
-                display.innerHTML+= ascii;
-                //https://www.codegrepper.com/code-examples/html/input+type%3D%22file%22+and+display+image
-                const userfile = document.getElementsByClassName("file-selector")[document.getElementsByClassName("file-selector").length-1];
-                userfile.addEventListener('change', (event) => {
-                    image = document.getElementsByClassName("ogImg")[document.getElementsByClassName("ogImg").length-1]
-                    image.src = URL.createObjectURL(event.target.files[0]);
-                    printImage(image.src,0,document.getElementsByClassName('asciiDisplay')[document.getElementsByClassName('asciiDisplay').length-1])
-                  });
-            }
-            else if(data === "adventure"){
-                display.innerHTML+=adventure;
-            }
-            else if(data === "fortuneTeller"){
-                display.innerHTML+=fortune;
-            }
-            else if(data === "resume"){
-                display.innerHTML+= resume;
-            }
-            else{
-                correctInputs[data]();
-            }
-        }
+        checkData(data);
         input.value = "";
     }
+})
+document.getElementById("aboutBtn").addEventListener('click', (event)=>{
+    checkData("about")
+})
+document.getElementById("contactBtn").addEventListener('click', (event)=>{
+    checkData("contact")
+})
+document.getElementById("portfolioBtn").addEventListener('click', (event)=>{
+    checkData("portfolio")
+})
+document.getElementById("clearBtn").addEventListener('click', (event)=>{
+    checkData("clear")
 })
