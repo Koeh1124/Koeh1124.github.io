@@ -201,9 +201,6 @@ function setColors(colors){
     css.setProperty('--importantColor', colors[3]);
     css.setProperty('--highlightColor', colors[4]);
 }
-document.getElementById("contact").addEventListener('click', (event) =>{
-    display.innerHTML+=contactFourm;
-})
 
 function checkData(data){
     if (correctInputs[data]){
