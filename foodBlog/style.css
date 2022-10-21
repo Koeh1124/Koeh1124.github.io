@@ -1,0 +1,38 @@
+/*header and contents*/
+*{
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+#logo{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    margin-left: 10%;
+}
+#logo h1{
+    margin-left: 10%;
+}
+#search{
+    align-content: center;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+}
+#search form{
+    display: flex;
+    justify-content: space-between;
+    float: right;
+}
+#icons{
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
