@@ -1,38 +1,45 @@
 /*header and contents*/
+/*
+colors:
+Dark Spring Green - #2c6e49
+Middle Green - #4c956c
+Light Yellow - #fefee3
+Glossy Grape - #af90a9
+black coffee - #483d3f
+*/
+
 *{
     box-sizing: border-box;
 }
 header{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row: 1;
     margin: 0;
     padding: 0;
 }
 #logo{
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    width: 20%;
-    margin-left: 10%;
+    grid-column: 1/2;
+    grid-row: 1;
+    float: left;
+    width: 100%;
 }
 #logo h1{
     margin-left: 10%;
 }
 #search{
-    align-content: center;
-    padding: 0;
-    margin: 0;
-    width: 80%;
+    grid-column: 3/5;
+    grid-row: 1;
 }
 #search form{
     display: flex;
     justify-content: space-between;
-    float: right;
+    float:none;
+    margin-top: 20px;
 }
 #icons{
-    padding: 0;
-    margin: 0;
-    width: 20%;
+    grid-column: 6;
+    grid-row: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
