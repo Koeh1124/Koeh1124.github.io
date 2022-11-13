@@ -1,27 +1,69 @@
-//Importing firebase, taken directrly from firebase
+import {getPostById,getAllPosts,getPostHtmlFromId, signIn } from "./firebase.js";
+import {setCookie, getCookie} from "./cookie.js"
+//main page
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js'
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+//get email and password
+let email = getCookie("email")
+let password = getCookie('password')
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCdMLCc3Nwx_Rj3vP4wCteajn3KEpIbc6c",
-  authDomain: "foodblog-8d953.firebaseapp.com",
-  projectId: "foodblog-8d953",
-  storageBucket: "foodblog-8d953.appspot.com",
-  messagingSenderId: "140511167625",
-  appId: "1:140511167625:web:dd7be49ee0586f39c5f258",
-  measurementId: "G-F7GZB21NQS"
-};
+//check if they are logged in
+let user = signIn(password,email)
+if(user!=null){
+  //do account info setup
+  console.log("logged in :)")
+}
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-const fireStore = getFirestore(app);
+function testFunction(){
+  getPostById("examplePost")
+  getPostHtmlFromId("examplePost").then(htmlData => {
+    if(htmlData!=undefined){
+      document.getElementById("content").innerHTML+=htmlData;
+      addFunctionToPosts()
+    }
+  })
+}
+
+function addFunctionToPosts(){
+  let getAllPosts = document.querySelectorAll(".switch-content-view");
+  getAllPosts.forEach(button =>{
+    if(button.getAttribute('name') == "view-more"){
+      button.onclick = function() {
+        expandParentDiv(button)
+      }
+    }
+    else{
+      button.onclick = function() {
+        collapseParentDiv(button)
+      }
+    }
+  })
+}
+
+function expandParentDiv(moreBTN){
+  let post = moreBTN.parentNode;
+  let lessBTN = post.querySelector('[name = "view-less"]')
+  let normal = post.querySelector('.normal-content');
+  let expanded = post.querySelector('.expanded-content')
+  lessBTN.classList.remove('hidden')
+  expanded.classList.remove('hidden')
+  moreBTN.classList.add("hidden")
+  normal.classList.add("hidden")
+}
+
+function collapseParentDiv(lessBTN){
+  let post = lessBTN.parentNode;
+  let moreBTN = post.querySelector('[name = "view-more"]')
+  let normal = post.querySelector('.normal-content');
+  let expanded = post.querySelector('.expanded-content')
+  lessBTN.classList.add('hidden')
+  expanded.classList.add('hidden')
+  moreBTN.classList.remove("hidden")
+  normal.classList.remove("hidden")
+}
+
+function login(form){
+ console.log(form)
+}
+
+document.getElementById('settings').onclick = function() {window.location = "/settings.html"};
+document.getElementById('user').onclick = function() {window.location = "/account.html"};
