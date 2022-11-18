@@ -161,36 +161,12 @@ export async function getPostHtmlFromId(id){
 //auth
 
 //signup
-export function signUp(password,email){
-    createUserWithEmailAndPassword(email, password).then((userCred) => {
-        //signed in
-        const user = userCred.user;
-        setCookie("email",email)
-        setCookie("password",password)
-    })
-    .catch((error) =>{
-        //error
-        //TODO-add error catches
-    })
+export async function signUp(password,email){
+    return createUserWithEmailAndPassword(auth,email, password)
 }
 //login
-export function signIn(password,email){
-    console.log(auth)
-    console.log(user)
-    signInWithEmailAndPassword(auth, email, password).then((userCred) => {
-        //signed in
-        const user = userCred.user;
-        console.log(user)
-        //set cookies to pass info between diffrent pages
-        setCookie("email",email)
-        setCookie("password",password)
-        return user;
-    })
-    .catch((error) =>{
-        //error
-        console.log(error)
-    })
-    return null;
+export async function signIn(password,email){
+    return signInWithEmailAndPassword(auth, email, password)
 }
 
 //signOut

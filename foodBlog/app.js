@@ -5,12 +5,30 @@ import {setCookie, getCookie} from "./cookie.js"
 //get email and password
 let email = getCookie("email")
 let password = getCookie('password')
-
+let user = null
+console.log(email,password)
 //check if they are logged in
-let user = signIn(password,email)
-if(user!=null){
-  //do account info setup
-  console.log("logged in :)")
+if((email != null)&&(password!=null)){
+  signIn(password,email).then((userCred) => {
+    //signed in
+    user = userCred.user;
+    //set cookies to pass info between diffrent pages
+    setCookie("email",email)
+    setCookie("password",password)
+  })
+  .catch((error) =>{
+    //error
+    console.log(error)
+  })
+}
+window.onload = function() {
+  testFunction()
+  /*
+  await(user)
+  console.log(user)
+  if(user){
+    console.log("logged in")
+  } */
 }
 
 function testFunction(){

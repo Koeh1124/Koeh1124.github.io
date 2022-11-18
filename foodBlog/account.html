@@ -36,14 +36,25 @@
             </div>
             <div id="mainAccount">
                 <div id="not-loggedIn" class="container">
-                    <div id="login-screen">
+                    <div id="login-screen" class="">
                         <h2>Login</h2>
                         <form onsubmit="" id="login-form">
                             <label for="email">Email:</label><input type="email" name="email"><br>
-                            <label for="email">Password:</label><input type="password" name="password"><br>
-                            <input type="button" id="loginSubmit">
+                            <label for="password">Password:</label><input type="password" name="password"><br>
+                            <p id="loginError"></p>
+                            <input type="button" id="loginSubmit" value="Login"> <input type="button" id="switchToSignup" value="creat an account">
                         </form>
-                        <button>SignUp</button>
+                    </div>
+                    <div id="signup-screen" class="hidden">
+                        <h2>Signup</h2>
+                        <form onsubmit="" id="signup-form">
+                            <label for="email">Email:</label><input type="email" name="email"><br>
+                            <label for="password">Password:</label><input type="password" name="password"><br>
+                            <label for="username">UserName:</label><input type="text" name="username"><br>
+                            <label for="profilePic">Profile Picture:</label><input type="file" name="profilePic"><br>
+                            <p id="signupError"></p>
+                            <input type="button" id="signupSubmit" value="Signup"> <input type="button" id="switchToLogin" value="already have an account">
+                        </form>
                     </div>
                 </div>
                 <div id="loggedIn" class="container hidden">
