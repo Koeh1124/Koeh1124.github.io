@@ -1,5 +1,5 @@
 import { getCookie, setCookie } from './cookie.js'
-import { signUp, signIn, logOut} from './firebase.js'
+import { signUp, signIn, logOut, getUserData} from './firebase.js'
 
 let email = getCookie("email")
 let password = getCookie('password')
@@ -10,26 +10,16 @@ if((email != null)&&(password!=null)){
   signIn(password,email).then((userCred) => {
     //signed in
     user = userCred.user;
-    //document.getElementById("not-loggedIn").classList.add("hidden")
-    //document.getElementById("loggedIn").classList.remove("hidden")
+    document.getElementById("not-loggedIn").classList.add("hidden")
+    document.getElementById("loggedIn").classList.remove("hidden")
     //set cookies to pass info between diffrent pages
     setCookie("email",email)
     setCookie("password",password)
+    setUpAccountScreen();
   })
   .catch((error) =>{
     //error
   })
-}
-//set on click listners
-document.getElementById('loginSubmit').onclick = function() {tryLogin()};
-document.getElementById('signupSubmit').onclick = function() {trySignup()};
-document.getElementById("switchToSignup").onclick = function() {
-    document.getElementById("login-screen").classList.add("hidden")
-    document.getElementById("signup-screen").classList.remove("hidden")
-}
-document.getElementById("switchToLogin").onclick = function() {
-    document.getElementById("login-screen").classList.remove("hidden")
-    document.getElementById("signup-screen").classList.add("hidden")
 }
 
 function tryLogin(){
@@ -40,8 +30,8 @@ function tryLogin(){
     console.log(email)
     signIn(password,email).then((userCred) =>{
         user = userCred
-        //document.getElementById("not-loggedIn").classList.add("hidden")
-        //document.getElementById("loggedIn").classList.remove("hidden")
+        document.getElementById("not-loggedIn").classList.add("hidden")
+        document.getElementById("loggedIn").classList.remove("hidden")
         //set cookies to pass info between diffrent pages
         setCookie("email",email)
         setCookie("password",password)
@@ -58,8 +48,8 @@ function trySignup(){
     signUp(password,email).then((userCred) => {
         //signed in
         user = userCred.user;
-        //document.getElementById("not-loggedIn").classList.add("hidden")
-        //document.getElementById("loggedIn").classList.remove("hidden")
+        document.getElementById("not-loggedIn").classList.add("hidden")
+        document.getElementById("loggedIn").classList.remove("hidden")
         //set cookies to pass info between diffrent pages
         setCookie("email",email)
         setCookie("password",password)
@@ -67,3 +57,32 @@ function trySignup(){
         document.getElementById("signupError").textContent = error
     })
 }
+
+function tryLogout(){
+    logOut();
+    document.getElementById("not-loggedIn").classList.remove("hidden")
+    document.getElementById("loggedIn").classList.add("hidden")
+}
+
+function setUpAccountScreen(){
+    let userPromise = getUserData(user.uid)
+    userPromise.then((userInfo) => {
+        if(userInfo.exists()){
+            let userData = userInfo.data()
+            console.log(userData)
+            console.log(userData.userName)
+        }
+    })
+}
+//set on click listners
+document.getElementById('loginSubmit').onclick = function() {tryLogin()};
+document.getElementById('signupSubmit').onclick = function() {trySignup()};
+document.getElementById("switchToSignup").onclick = function() {
+    document.getElementById("login-screen").classList.add("hidden")
+    document.getElementById("signup-screen").classList.remove("hidden")
+}
+document.getElementById("switchToLogin").onclick = function() {
+    document.getElementById("login-screen").classList.remove("hidden")
+    document.getElementById("signup-screen").classList.add("hidden")
+}
+document.getElementById("logout").onclick = function() {tryLogout()};

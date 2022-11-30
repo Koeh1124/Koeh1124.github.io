@@ -115,6 +115,7 @@ const postConverter = {
 };
 
 //read data
+//post data
 export async function getAllPosts(){
     const postRef = collection(db, 'posts');
     let allPsots = await getDocs(postRef);
@@ -153,9 +154,16 @@ export async function getPostHtmlFromId(id){
         console.log("post dose not exist")
     }
 }
-
+//user data
+export async function getUserData(id){
+    console.log(id)
+    const userRef = doc(db, 'users', id);
+    return getDoc(userRef);
+}
 //push data
+//post data
 
+//userdata
 
 //https://firebase.google.com/docs/auth/web/start
 //auth

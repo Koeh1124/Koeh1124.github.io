@@ -23,6 +23,11 @@ if((email != null)&&(password!=null)){
 }
 window.onload = function() {
   testFunction()
+  testFunction()
+  testFunction()
+  testFunction()
+  testFunction()
+  testFunction()
   /*
   await(user)
   console.log(user)
