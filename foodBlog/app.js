@@ -88,5 +88,5 @@ function login(form){
  console.log(form)
 }
 
-document.getElementById('settings').onclick = function() {window.location = "/settings.html"};
-document.getElementById('user').onclick = function() {window.location = "/account.html"};
+document.getElementById('settings').onclick = function() {window.location = "foodBlog/settings.html"};
+document.getElementById('user').onclick = function() {window.location = "foodBlog/account.html"};
