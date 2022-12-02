@@ -896,6 +896,15 @@ black coffee - #483d3f
         background-color: #4c956c;
         border-radius: 10px;
     }
+    #accountInfo *{
+        display: block;
+        margin-top: 1vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        background-color: #4c956c;
+        border-radius: 10px;
+    }
     #userInfo{
         padding-left: 15px;
     }
@@ -903,8 +912,8 @@ black coffee - #483d3f
         border-radius: 10px;
         margin-right: auto;
         margin-top: 15px;
-        height: 20vw;
-        width: 20vw;
+        height: 30vw;
+        width: 30vw;
     }
     #friendNum{
         padding-left: 15px;
@@ -1002,6 +1011,7 @@ black coffee - #483d3f
         height: 100vh;
         position: relative;
     }
+
     #mainAccount .container{
         margin-left: 5vw;
         margin-right: 5vw;
@@ -1015,7 +1025,10 @@ black coffee - #483d3f
         overflow-x: hidden;
     }
     #not-loggedIn{
-    
+        background-color: #4c956c;
+        margin: 2vw;
+        border-radius: 10px;
+        padding: 2vw;
     }
     #not-loggedIn form{
         background-color: #fefee3;
@@ -1027,10 +1040,16 @@ black coffee - #483d3f
         padding-left: 15px;
         padding-top: 50px;
     }
+    #loginError{
+        background-color: #fefee3;
+    }
     #not-loggedIn form *{
         margin: 20px;
+        border-radius: 5px;
+        padding: 2px;
     }
     #loggedIn{
-    
+        display: flex;
+        justify-content: space-between;
     }
 }
