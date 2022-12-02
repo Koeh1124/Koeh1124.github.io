@@ -88,5 +88,31 @@ function login(form){
  console.log(form)
 }
 
-document.getElementById('settings').onclick = function() {window.location = "foodBlog/settings.html"};
-document.getElementById('user').onclick = function() {window.location = "foodBlog/account.html"};
+function switchToContent(){
+  let contentDiv = document.getElementById("content")
+  let accDiv = document.getElementById("account")
+  let friendDiv = document.getElementById("friends")
+  contentDiv.classList.remove("hideContent")
+  contentDiv.classList.add("displayContent")
+  accDiv.classList.add("hideContent")
+  accDiv.classList.remove("displaySplitLeft")
+  friendDiv.classList.add("hideContent")
+  friendDiv.classList.remove("displaySplitRight")
+}
+function switchToAccount(){
+  let contentDiv = document.getElementById("content")
+  let accDiv = document.getElementById("account")
+  let friendDiv = document.getElementById("friends")
+  contentDiv.classList.add("hideContent")
+  contentDiv.classList.remove("displayContent")
+  accDiv.classList.remove("hideContent")
+  accDiv.classList.add("displaySplitLeft")
+  friendDiv.classList.remove("hideContent")
+  friendDiv.classList.add("displaySplitRight")
+}
+//not done, button just there because I'm planning on continuing this site after the project is turned in and want to add this later :)
+//document.getElementById('settings').onclick = function() {window.location = "index.html"};
+
+document.getElementById('user').onclick = function() {window.location = "account.html"};
+document.getElementById('accountBTN').onclick = function() {switchToAccount()};
+document.getElementById('contentBTN').onclick = function() {switchToContent()};
