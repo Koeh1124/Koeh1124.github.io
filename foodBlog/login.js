@@ -31,7 +31,11 @@ function tryLogin(){
     signIn(password,email).then((userCred) =>{
         user = userCred
         document.getElementById("not-loggedIn").classList.add("hidden")
+        document.getElementById("not-loggedIn").classList.remove("displayAccount")
+        document.getElementById("not-loggedIn").classList.remove("loginPadding")
         document.getElementById("loggedIn").classList.remove("hidden")
+        document.getElementById("loggedIn").classList.add("accPadding")
+        document.getElementById("loggedIn").classList.add("displayAccount")
         //set cookies to pass info between diffrent pages
         setCookie("email",email)
         setCookie("password",password)
@@ -49,7 +53,11 @@ function trySignup(){
         //signed in
         user = userCred.user;
         document.getElementById("not-loggedIn").classList.add("hidden")
+        document.getElementById("not-loggedIn").classList.remove("displayAccount")
+        document.getElementById("not-loggedIn").classList.remove("loginPadding")
         document.getElementById("loggedIn").classList.remove("hidden")
+        document.getElementById("loggedIn").classList.add("accPadding")
+        document.getElementById("loggedIn").classList.add("displayAccount")
         //set cookies to pass info between diffrent pages
         setCookie("email",email)
         setCookie("password",password)
@@ -61,7 +69,11 @@ function trySignup(){
 function tryLogout(){
     logOut();
     document.getElementById("not-loggedIn").classList.remove("hidden")
+    document.getElementById("not-loggedIn").classList.add("displayAccount")
+    document.getElementById("not-loggedIn").classList.add("loginPadding")
     document.getElementById("loggedIn").classList.add("hidden")
+    document.getElementById("loggedIn").classList.remove("displayAccount")
+    document.getElementById("loggedIn").classList.remove("accPadding")
 }
 
 function setUpAccountScreen(){

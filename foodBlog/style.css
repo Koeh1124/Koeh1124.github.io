@@ -15,6 +15,7 @@ black coffee - #483d3f
         margin: 0;
     }
     html body{
+        display: grid;
         overflow-y: hidden;
     }
     main{
@@ -24,6 +25,7 @@ black coffee - #483d3f
         margin: 0;
         padding: 0;
         overflow-y: hidden;
+        background-color: #2c6e49;
     }
     .displayContent{
         grid-column-start: 1;
@@ -61,11 +63,13 @@ black coffee - #483d3f
         margin-left: 10%;
     }
     #search{
+        display: grid;
         padding-top: 0;
         height: 3vh;
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row: 2;
+        padding-bottom: 5px;
     }
     #search form{
         display: flex;
@@ -342,7 +346,130 @@ black coffee - #483d3f
     #createBTN{
         background-color: #fefee3;
     }
+    /*account page*/
+    .displayAccount{
+        grid-column: 1/4;
+        grid-row-start: 3;
+        grid-row-end: 3
+    }
+    .loginPadding{
+        padding: 2vw;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-bottom: 40vh;
+        padding-bottom: 10vh;
+        margin-top: 10vh;
+    }
+    .accPadding{
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding-bottom: 10vw;
+        padding-top: 0;
+    }
+    #mainAccount{
+        background-color: #2c6e49;
+        height: 100vh;
+        position: relative;
+    }
+    #not-loggedIn{
+        background-color: #4c956c;
+        border-radius: 10px;
+    }
+    #not-loggedIn form{
+        background-color: #fefee3;
+        border-radius: 15px;
+        padding-left: 15px;
+        padding-top: 50px;
+    }
+    #login-screen{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        margin-top: 4vh;
+    }
+    #signup-screen{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        margin-top: 0;
+    }
+    #loginError{
+        background-color: #fefee3;
+    }
+    #not-loggedIn form *{
+        margin: 20px;
+        border-radius: 5px;
+        padding: 2px;
+    }
+    #loggedIn{
+        display: flex;
+        justify-content: space-between;
+    }
+    #accountInfo *{
+        display: block;
+        margin-top: 1vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: auto;
+        background-color: #4c956c;
+        border-radius: 10px;
+    }
+    #accountInfo{
+        margin-top: 5vh;
+    }
+    #accountOptions{
+        border-radius: 10px;
+        margin-top: 5vh;
+        height: 80vh;
+        width: 50vw;
+        background-color: #4c956c;
+    }
+    #accountOptions form{
+        background-color: #fefee3;
+        height: 80%;
+        border-radius: 15px;
+        padding-left: 15px;
+        padding-top: 50px;
+        margin-top: 5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    #accountOptions form *{
+        margin: 20px;
+        border-radius: 5px;
+        padding: 2px;
+    }
+    /*Post page*/
+    #postCreater{
+        grid-row: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        height: 85vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        width: 80vw;
+        border-radius: 10px;
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+        background-color: #4c956c;
+        overflow-y: scroll;
+        padding: 5vw;
+    }
+    #postCreater::-webkit-scrollbar{
+        display: none;
+    }
+    #postMaker{
+        background-color: #fefee3;
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    #postMaker *{
+        margin: 5px;
+        border-radius: 5px;
+        padding: 2px;
+    }
 }
+
 /*phone*/
 @media(max-width:750px){
     *{
@@ -353,6 +480,7 @@ black coffee - #483d3f
         overflow-y: hidden;
     }
     main{
+        background-color: #2c6e49;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-row: 4;
@@ -677,6 +805,128 @@ black coffee - #483d3f
     #createBTN{
         background-color: #fefee3;
     }
+    /*account page*/
+    .displayAccount{
+        grid-column: 1/4;
+        grid-row-start: 3;
+        grid-row-end: 3
+    }
+    .loginPadding{
+        padding: 2vw;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-bottom: 40vh;
+        padding-bottom: 10vh;
+        margin-top: 10vh;
+    }
+    .accPadding{
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding-bottom: 10vw;
+        padding-top: 0;
+    }
+    #mainAccount{
+        background-color: #2c6e49;
+        height: 100vh;
+        position: relative;
+    }
+    #not-loggedIn{
+        background-color: #4c956c;
+        border-radius: 10px;
+    }
+    #not-loggedIn form{
+        background-color: #fefee3;
+        border-radius: 15px;
+        padding-left: 15px;
+        padding-top: 50px;
+    }
+    #login-screen{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        margin-top: 4vh;
+    }
+    #signup-screen{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        margin-top: 0;
+    }
+    #loginError{
+        background-color: #fefee3;
+    }
+    #not-loggedIn form *{
+        margin: 20px;
+        border-radius: 5px;
+        padding: 2px;
+    }
+    #loggedIn{
+        display: flex;
+        justify-content: space-between;
+    }
+    #accountInfo *{
+        display: block;
+        margin-top: 1vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: auto;
+        background-color: #4c956c;
+        border-radius: 10px;
+    }
+    #accountInfo{
+        margin-top: 5vh;
+    }
+    #accountOptions{
+        border-radius: 10px;
+        margin-top: 5vh;
+        height: 80vh;
+        width: 50vw;
+        background-color: #4c956c;
+    }
+    #accountOptions form{
+        background-color: #fefee3;
+        height: 80%;
+        border-radius: 15px;
+        padding-left: 15px;
+        padding-top: 50px;
+        margin-top: 5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    #accountOptions form *{
+        margin: 20px;
+        border-radius: 5px;
+        padding: 2px;
+    }
+    /*Post page*/
+    #postCreater{
+        grid-row: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        height: 85vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        width: 80vw;
+        border-radius: 10px;
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+        background-color: #4c956c;
+        overflow-y: scroll;
+        padding: 5vw;
+    }
+    #postCreater::-webkit-scrollbar{
+        display: none;
+    }
+    #postMaker{
+        background-color: #fefee3;
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    #postMaker *{
+        margin: 5px;
+        border-radius: 5px;
+        padding: 2px;
+    }
 }
 /*computer*/
 @media(min-width:1200px){
@@ -686,6 +936,7 @@ black coffee - #483d3f
     }
     html body{
         overflow-y: hidden;
+        display: grid;
     }
     main{
         display: grid;
@@ -694,6 +945,8 @@ black coffee - #483d3f
         margin: 0;
         padding: 0;
         overflow-y: hidden;
+        height: 100vh;
+        background-color: #2c6e49;
     }
     .hideContent{
         display: inline;
@@ -712,10 +965,13 @@ black coffee - #483d3f
         float: left;
         width: 100%;
     }
-    #logo h1{
+    #logo a{
         padding-top: 0;
         color: #fefee3;
         margin-left: 10%;
+    }
+    #logo a:hover{
+        color: #af90a9;
     }
     #search{
         padding-top: 12px;
@@ -749,7 +1005,7 @@ black coffee - #483d3f
     }
     #icons *:hover{
         cursor: pointer;
-        color: #483d3f;
+        color: #af90a9;
     }
     
     /*main cats styles*/
@@ -784,6 +1040,8 @@ black coffee - #483d3f
         visibility: hidden;
         height: 0;
         width: 0;
+        margin: 0;
+        padding: 0;
         overflow: hidden;
     }
     
@@ -861,7 +1119,7 @@ black coffee - #483d3f
     }
     .switch-content-view:hover{
         transition: 1s;
-        background-color: #483d3f;
+        background-color: #af90a9;
     }
     .interactions{
         display: flex;
@@ -912,8 +1170,8 @@ black coffee - #483d3f
         border-radius: 10px;
         margin-right: auto;
         margin-top: 15px;
-        height: 30vw;
-        width: 30vw;
+        height: 20vw;
+        width: 20vw;
     }
     #friendNum{
         padding-left: 15px;
@@ -1004,41 +1262,42 @@ black coffee - #483d3f
         background-color: #fefee3;
     }
     /*account page*/
-    #mainAccount{
+    .displayAccount{
         grid-column: 1/4;
-        grid-row: 2;
+        grid-row-start: 2;
+        grid-row-end: 3
+    }
+    #mainAccount{
         background-color: #2c6e49;
         height: 100vh;
         position: relative;
     }
-
-    #mainAccount .container{
-        margin-left: 5vw;
-        margin-right: 5vw;
-        width: 90%;
-        height: 85%;
-        border-radius: 15px;
-        background-color: #4c956c;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-        overflow-y: hidden;
-        overflow-x: hidden;
-    }
     #not-loggedIn{
         background-color: #4c956c;
-        margin: 2vw;
         border-radius: 10px;
         padding: 2vw;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-bottom: 20vh;
+        padding-bottom: 10vh;
+        margin-top: 10vh;
+        height: 80vh;
     }
     #not-loggedIn form{
         background-color: #fefee3;
-        height: 80%;
-        margin-left: 2vw;
-        margin-right: 2vw;
-        margin-top: 4vh;
         border-radius: 15px;
         padding-left: 15px;
         padding-top: 50px;
+    }
+    #login-screen{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        margin-top: 4vh;
+    }
+    #signup-screen{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        margin-top: 0;
     }
     #loginError{
         background-color: #fefee3;
@@ -1051,5 +1310,64 @@ black coffee - #483d3f
     #loggedIn{
         display: flex;
         justify-content: space-between;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding-bottom: 10vw;
+        padding-top: 0;
+    }
+    #accountInfo{
+        margin-top: 5vh;
+    }
+    #accountOptions{
+        border-radius: 10px;
+        margin-top: 5vh;
+        height: 80vh;
+        width: 50vw;
+        background-color: #4c956c;
+    }
+    #accountOptions form{
+        background-color: #fefee3;
+        height: 80%;
+        border-radius: 15px;
+        padding-left: 15px;
+        padding-top: 50px;
+        margin-top: 5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    #accountOptions form *{
+        margin: 20px;
+        border-radius: 5px;
+        padding: 2px;
+    }
+    /*Post page*/
+    #postCreater{
+        grid-row: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        height: 85vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        width: 80vw;
+        border-radius: 10px;
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+        background-color: #4c956c;
+        overflow-y: scroll;
+        padding: 5vw;
+    }
+    #postCreater::-webkit-scrollbar{
+        display: none;
+    }
+    #postMaker{
+        background-color: #fefee3;
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    #postMaker *{
+        margin: 5px;
+        border-radius: 5px;
+        padding: 2px;
     }
 }

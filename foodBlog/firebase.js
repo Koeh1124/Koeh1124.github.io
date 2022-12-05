@@ -47,7 +47,7 @@ class Post {
             </div>
             <div class="expanded-content hidden">
                 <div class="expanded-top">
-                    <img class="contentImg" src="`+this.image+`">
+                    <img class="contentImg" src="`+this.image+`" alt="`+this.title+`">
                     <div class="contentInfo">
                         <p class="desc">`+this.description+`</p>
                     </div>
