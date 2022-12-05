@@ -431,12 +431,8 @@ black coffee - #483d3f
         border-radius: 10px;
     }
     #createBTN{
-        width: 100%;
-        color: #fefee3;
-        text-decoration: none;
-        background-color: #483d3f;
-    }
-    #createBTN{
+        display: block;
+        text-align: center;
         width: 100%;
         color: #fefee3;
         text-decoration: none;
@@ -934,7 +930,11 @@ black coffee - #483d3f
         background-color: #4c956c;
         border-radius: 10px;
     }
+    .button{
+        
+    }
     #createBTN{
+        text-align: center;
         width: 100%;
         color: #fefee3;
         text-decoration: none;
@@ -1276,7 +1276,8 @@ black coffee - #483d3f
         width: 20vw;
     }
     #createBTN{
-        width: 100%;
+        text-align: center;
+        width: 80%;
         color: #fefee3;
         text-decoration: none;
         background-color: #483d3f;
