@@ -433,7 +433,7 @@ black coffee - #483d3f
     #createBTN{
         display: block;
         text-align: center;
-        width: 100%;
+        width: 80%;
         color: #fefee3;
         text-decoration: none;
         background-color: #483d3f;
@@ -935,7 +935,7 @@ black coffee - #483d3f
     }
     #createBTN{
         text-align: center;
-        width: 100%;
+        width: 80%;
         color: #fefee3;
         text-decoration: none;
         background-color: #483d3f;
