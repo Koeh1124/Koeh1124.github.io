@@ -57,10 +57,15 @@ black coffee - #483d3f
         width: 100%;
         padding-top: 0;
     }
-    #logo h1{
+    #logo a{
+        text-decoration: none;
         padding-top: 0;
         color: #fefee3;
         margin-left: 10%;
+    }
+    #logo a:hover{
+        cursor: pointer;
+        color: #af90a9;
     }
     #search{
         display: grid;
@@ -100,7 +105,7 @@ black coffee - #483d3f
     }
     #icons *:hover{
         cursor: pointer;
-        color: #483d3f;
+        color: #af90a9;
     }
     #innerNavBar{
         background-color: #483d3f;
@@ -212,15 +217,20 @@ black coffee - #483d3f
         background-color:#fefee3;
     }
     .switch-content-view:hover{
-        background-color: #483d3f;
+        background-color: #af90a9;
     }
     .interactions{
+        color: #fefee3;
         display: flex;
         justify-content: flex-start;
         margin-top: 5px;
     }
     .interactions *{
         margin-right: 5px;
+    }
+    .interactions *:hover{
+        color: #af90a9;
+        cursor: pointer;
     }
     .header{
         height: 4vh;
@@ -322,8 +332,15 @@ black coffee - #483d3f
         background-color: #4c956c;
         border-radius: 10px;
     }
-    #userInfo{
+    #userInfo a{
+        margin: 0;
+        text-decoration: none;
+        color: #fefee3;
         padding-left: 15px;
+    }
+    #userInfo a:hover{
+        color: #af90a9;
+        cursor: pointer;
     }
     #userPic{
         border-radius: 10px;
@@ -342,9 +359,6 @@ black coffee - #483d3f
     #userDesc{
         padding-left: 15px;
         margin-left: 0;
-    }
-    #createBTN{
-        background-color: #fefee3;
     }
     /*account page*/
     .displayAccount{
@@ -413,7 +427,34 @@ black coffee - #483d3f
         background-color: #4c956c;
         border-radius: 10px;
     }
+    #createBTN{
+        width: 100%;
+        color: #fefee3;
+        text-decoration: none;
+        background-color: #483d3f;
+    }
+    #createBTN{
+        width: 100%;
+        color: #fefee3;
+        text-decoration: none;
+        background-color: #483d3f;
+    }
+    #createBTN:hover{
+        cursor: pointer;
+        color: #af90a9;
+    }
+    #logout{
+        width: 100%;
+        color: #fefee3;
+        text-decoration: none;
+        background-color: #483d3f;
+    }
+    #logout:hover{
+        color: #af90a9;
+        cursor: pointer;
+    }
     #accountInfo{
+        margin-right: 5vw;
         margin-top: 5vh;
     }
     #accountOptions{
@@ -518,10 +559,15 @@ black coffee - #483d3f
         width: 100%;
         padding-top: 0;
     }
-    #logo h1{
+    #logo a{
+        text-decoration: none;
         padding-top: 0;
         color: #fefee3;
         margin-left: 10%;
+    }
+    #logo a:hover{
+        color: #af90a9;
+        cursor: pointer;
     }
     #search{
         padding-top: 0;
@@ -559,7 +605,7 @@ black coffee - #483d3f
     }
     #icons *:hover{
         cursor: pointer;
-        color: #483d3f;
+        color: #af90a9;
     }
     #innerNavBar{
         background-color: #483d3f;
@@ -671,15 +717,21 @@ black coffee - #483d3f
         background-color:#fefee3;
     }
     .switch-content-view:hover{
-        background-color: #483d3f;
+        cursor: pointer;
+        background-color: #af90a9;
     }
     .interactions{
+        color: #fefee3;
         display: flex;
         justify-content: flex-start;
         margin-top: 5px;
     }
     .interactions *{
         margin-right: 5px;
+    }
+    .interactions *:hover{
+        color: #af90a9;
+        cursor: pointer;
     }
     .header{
         height: 4vh;
@@ -781,8 +833,15 @@ black coffee - #483d3f
         background-color: #4c956c;
         border-radius: 10px;
     }
-    #userInfo{
+    #userInfo a{
+        margin: 0;
+        text-decoration: none;
+        color: #fefee3;
         padding-left: 15px;
+    }
+    #userInfo a:hover{
+        color: #af90a9;
+        cursor: pointer;
     }
     #userPic{
         border-radius: 10px;
@@ -802,9 +861,7 @@ black coffee - #483d3f
         padding-left: 15px;
         margin-left: 0;
     }
-    #createBTN{
-        background-color: #fefee3;
-    }
+
     /*account page*/
     .displayAccount{
         grid-column: 1/4;
@@ -872,7 +929,29 @@ black coffee - #483d3f
         background-color: #4c956c;
         border-radius: 10px;
     }
+    #createBTN{
+        width: 100%;
+        color: #fefee3;
+        text-decoration: none;
+        background-color: #483d3f;
+    }
+    #createBTN:hover{
+        cursor: pointer;
+        color: #af90a9;
+    }
+    #logout{
+        width: 100%;
+        color: #fefee3;
+        text-decoration: none;
+        background-color: #483d3f;
+    }
+    #logout:hover{
+        color: #af90a9;
+        cursor: pointer;
+    }
     #accountInfo{
+        width: 40vw;
+        margin-right: 5vw;
         margin-top: 5vh;
     }
     #accountOptions{
@@ -966,6 +1045,7 @@ black coffee - #483d3f
         width: 100%;
     }
     #logo a{
+        text-decoration: none;
         padding-top: 0;
         color: #fefee3;
         margin-left: 10%;
@@ -1115,19 +1195,25 @@ black coffee - #483d3f
         margin-right: 20%;
         border: none;
         border-radius: 5px;
-        background-color:#fefee3;
+        color:#fefee3;
+        background-color: #483d3f;
     }
     .switch-content-view:hover{
-        transition: 1s;
-        background-color: #af90a9;
+        color: #af90a9;
+        cursor: pointer;
     }
     .interactions{
+        color: #fefee3;
         display: flex;
         justify-content: flex-start;
         margin-top: 5px;
     }
     .interactions *{
         margin-right: 5px;
+    }
+    .interactions *:hover{
+        color: #af90a9;
+        cursor: pointer;
     }
     .header{
         height: 6vh;
@@ -1166,12 +1252,41 @@ black coffee - #483d3f
     #userInfo{
         padding-left: 15px;
     }
+    #userInfo a{
+        margin: 0;
+        text-decoration: none;
+        color: #fefee3;
+        padding-left: 15px;
+    }
+    #userInfo a:hover{
+        color: #af90a9;
+        cursor: pointer;
+    }
     #userPic{
         border-radius: 10px;
         margin-right: auto;
         margin-top: 15px;
         height: 20vw;
         width: 20vw;
+    }
+    #createBTN{
+        width: 100%;
+        color: #fefee3;
+        text-decoration: none;
+        background-color: #483d3f;
+    }
+    #createBTN:hover{
+        cursor: pointer;
+        color: #af90a9;
+    }
+    #logout{
+        color: #fefee3;
+        text-decoration: none;
+        background-color: #483d3f;
+    }
+    #logout:hover{
+        cursor: pointer;
+        color: #af90a9;
     }
     #friendNum{
         padding-left: 15px;
